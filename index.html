@@ -319,10 +319,21 @@
       }
 
       .service-card {
-        padding: 1.5rem;
+        overflow: hidden;
         background: linear-gradient(135deg, rgba(30, 47, 71, 0.6), rgba(15, 20, 31, 0.8));
         border: 1px solid var(--border);
         border-radius: 8px;
+      }
+
+      .service-card .service-photo {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .service-card .service-body {
+        padding: 1.5rem;
       }
 
       .service-card h3 {
@@ -429,6 +440,36 @@
         padding: 0.85rem 1rem 1rem;
         color: var(--text-muted);
         font-size: 0.93rem;
+      }
+
+      .partner-logos {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .partner-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 1.4rem 1rem;
+        background: var(--blue);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--text-muted);
+        font-weight: 800;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        font-size: 0.88rem;
+      }
+
+      .partner-logo svg {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        color: var(--accent-light);
       }
 
       .contact-wrap {
@@ -675,7 +716,8 @@
           grid-template-columns: 1fr;
         }
 
-        .stats-bar {
+        .stats-bar,
+        .partner-logos {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -709,6 +751,7 @@
         <nav class="nav" aria-label="Fő navigáció">
           <a href="#services">Szolgáltatások</a>
           <a href="#about">Rólunk</a>
+          <a href="#ajanlatkeres">Ajánlatkérés</a>
           <a href="#references">Referenciák</a>
           <a href="#contact">Kapcsolat</a>
         </nav>
@@ -726,8 +769,8 @@
               Teljes körű vagyonvédelem és Ön nyugalmaért és biztonságáért.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Szolgáltatásaink</a>
-              <a class="btn btn-secondary" href="#about">Ajánlatot kérek</a>
+              <a class="btn btn-primary" href="#services">Szolgáltatásaink</a>
+              <a class="btn btn-secondary" href="#ajanlatkeres">Ajánlatot kérek</a>
             </div>
           </div>
           <div class="hero-card">
@@ -743,31 +786,6 @@
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="container split">
-          <div class="card about-card">
-            <h2>Rólunk</h2>
-            <p>
-              A DOG RACE SECURITY Kft. elkötelezett a magas színvonalú személy- és vagyonvédelmi
-              szolgáltatások nyújtása mellett. Munkánk során a megbízhatóságot, a diszkréciót és a
-              professzionális fellépést tekintjük elsődleges értékeinknek.
-            </p>
-            <p>
-              Minden megbízás esetén ügyfeleink igényeihez igazított biztonsági megoldásokat dolgozunk
-              ki, legyen szó objektumőrzésről, rendezvénybiztosításról vagy személyvédelemről.
-            </p>
-            <ul class="bullet-list">
-              <li>Országos lefedettség</li>
-              <li>24 órás rendelkezésre állás</li>
-              <li>Professzionális, egyedi megoldások</li>
-            </ul>
-          </div>
-          <div class="card about-card">
-            <img src="images/image2.jpeg" alt="Biztonsági szolgáltatás munkavégzés közben" />
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="services">
         <div class="container">
           <div class="section-title">
@@ -776,34 +794,52 @@
           </div>
           <div class="services-grid">
             <article class="card service-card">
-              <div class="service-icon"><img src="images/icons/icon-objektumorzes.png" alt="Objektumőrzés ikon" /></div>
-              <h3>Objektumőrzés</h3>
-              <p>Épületek, telephelyek, ipari létesítmények őrzése és védelme éjjel-nappal.</p>
+              <img class="service-photo" src="images/image4.jpeg" alt="Objektumőrzés fotó" />
+              <div class="service-body">
+                <div class="service-icon"><img src="images/icons/icon-objektumorzes.png" alt="Objektumőrzés ikon" /></div>
+                <h3>Objektumőrzés</h3>
+                <p>Épületek, telephelyek, ipari létesítmények őrzése és védelme éjjel-nappal.</p>
+              </div>
             </article>
             <article class="card service-card">
-              <div class="service-icon"><img src="images/icons/icon-portaszolgalat.png" alt="Portaszolgálat ikon" /></div>
-              <h3>Portaszolgálat</h3>
-              <p>Recepciós és portaszolgálati feladatok ellátása, beléptetés és információs szolgáltatások.</p>
+              <img class="service-photo" src="images/image6.jpeg" alt="Portaszolgálat fotó" />
+              <div class="service-body">
+                <div class="service-icon"><img src="images/icons/icon-portaszolgalat.png" alt="Portaszolgálat ikon" /></div>
+                <h3>Portaszolgálat</h3>
+                <p>Recepciós és portaszolgálati feladatok ellátása, beléptetés és információs szolgáltatások.</p>
+              </div>
             </article>
             <article class="card service-card">
-              <div class="service-icon"><img src="images/icons/icon-jarorszolgalat.png" alt="Járőrszolgálat ikon" /></div>
-              <h3>Járőrszolgálat</h3>
-              <p>Rendszeres vagy alkalmi járőrszolgálat gépkocsival vagy gyalogosan.</p>
+              <img class="service-photo" src="images/image3.jpeg" alt="Járőrszolgálat fotó" />
+              <div class="service-body">
+                <div class="service-icon"><img src="images/icons/icon-jarorszolgalat.png" alt="Járőrszolgálat ikon" /></div>
+                <h3>Járőrszolgálat</h3>
+                <p>Rendszeres vagy alkalmi járőrszolgálat gépkocsival vagy gyalogosan.</p>
+              </div>
             </article>
             <article class="card service-card">
-              <div class="service-icon"><img src="images/icons/icon-rendezvenybiztositas.png" alt="Rendezvénybiztosítás ikon" /></div>
-              <h3>Rendezvénybiztosítás</h3>
-              <p>Rendezvények biztosítása a résztvevők és a vagyon védelme érdekében.</p>
+              <img class="service-photo" src="images/image2.jpeg" alt="Rendezvénybiztosítás fotó" />
+              <div class="service-body">
+                <div class="service-icon"><img src="images/icons/icon-rendezvenybiztositas.png" alt="Rendezvénybiztosítás ikon" /></div>
+                <h3>Rendezvénybiztosítás</h3>
+                <p>Rendezvények biztosítása a résztvevők és a vagyon védelme érdekében.</p>
+              </div>
             </article>
             <article class="card service-card">
-              <div class="service-icon"><img src="images/icons/icon-takaritas.png" alt="Takarítás ikon" /></div>
-              <h3>Takarítás</h3>
-              <p>Irodaházak, létesítmények és közterületek takarítása magas színvonalon.</p>
+              <img class="service-photo" src="images/image8.jpeg" alt="Takarítás fotó" />
+              <div class="service-body">
+                <div class="service-icon"><img src="images/icons/icon-takaritas.png" alt="Takarítás ikon" /></div>
+                <h3>Takarítás</h3>
+                <p>Irodaházak, létesítmények és közterületek takarítása magas színvonalon.</p>
+              </div>
             </article>
             <article class="card service-card">
-              <div class="service-icon"><img src="images/icons/icon-megbizhato-partner.png" alt="Megbízható partner ikon" /></div>
-              <h3>Megbízható partner</h3>
-              <p>Ügyfeleink biztonsága a legfontosabb számunkra. Hosszú távú, megbízható együttműködés.</p>
+              <img class="service-photo" src="images/image1.jpeg" alt="Megbízható partner fotó" />
+              <div class="service-body">
+                <div class="service-icon"><img src="images/icons/icon-megbizhato-partner.png" alt="Megbízható partner ikon" /></div>
+                <h3>Megbízható partner</h3>
+                <p>Ügyfeleink biztonsága a legfontosabb számunkra. Hosszú távú, megbízható együttműködés.</p>
+              </div>
             </article>
           </div>
 
@@ -840,25 +876,54 @@
         </div>
       </section>
 
+      <section class="section" id="about">
+        <div class="container split">
+          <div class="card about-card">
+            <h2>Rólunk</h2>
+            <p>
+              A DOG RACE SECURITY Kft. elkötelezett a magas színvonalú személy- és vagyonvédelmi
+              szolgáltatások nyújtása mellett. Munkánk során a megbízhatóságot, a diszkréciót és a
+              professzionális fellépést tekintjük elsődleges értékeinknek.
+            </p>
+            <p>
+              Minden megbízás esetén ügyfeleink igényeihez igazított biztonsági megoldásokat dolgozunk
+              ki, legyen szó objektumőrzésről, rendezvénybiztosításról vagy személyvédelemről.
+            </p>
+            <ul class="bullet-list">
+              <li>Országos lefedettség</li>
+              <li>24 órás rendelkezésre állás</li>
+              <li>Professzionális, egyedi megoldások</li>
+            </ul>
+          </div>
+          <div class="card about-card">
+            <img src="images/image5.jpeg" alt="Biztonsági szolgáltatás munkavégzés közben" />
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="references">
         <div class="container">
           <div class="section-title">
             <h2>Referenciák</h2>
-            <span class="muted">Logók, partnercégek, fotók és esettanulmányok később kerülnek feltöltésre</span>
+            <span class="muted">Partnercégeink megbíznak bennünk</span>
           </div>
-          <div class="gallery">
-            <figure>
-              <img src="images/image3.jpeg" alt="Biztonsági szolgáltatás fotó" />
-              <figcaption>Biztonságos működés, precíz koordináció</figcaption>
-            </figure>
-            <figure>
-              <img src="images/image4.jpeg" alt="Kutyás őrzés fotó" />
-              <figcaption>Fokozott védelem szolgálati kutyákkal</figcaption>
-            </figure>
-            <figure>
-              <img src="images/image5.jpeg" alt="Rendezvénybiztosítás fotó" />
-              <figcaption>Rendezvények teljes körű biztosítása</figcaption>
-            </figure>
+          <div class="partner-logos">
+            <div class="partner-logo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L22 20 L2 20 Z" /></svg>
+              Alpha Group
+            </div>
+            <div class="partner-logo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 7.07 17.07L12 12Z" /></svg>
+              City Center
+            </div>
+            <div class="partner-logo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 21 7v10l-9 5-9-5V7Z" /></svg>
+              Build Tech
+            </div>
+            <div class="partner-logo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4C10 4 4 10 4 20c10 0 16-6 16-16Z" /></svg>
+              Green Service
+            </div>
           </div>
         </div>
       </section>
@@ -880,7 +945,7 @@
           </div>
         </div>
 
-        <div class="container" style="margin-top: 2rem;">
+        <div class="container" style="margin-top: 2rem;" id="ajanlatkeres">
           <div class="card contact-form">
             <h3>Ajánlatkérő űrlap</h3>
             <form>
