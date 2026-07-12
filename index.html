@@ -670,6 +670,16 @@
         color: white;
       }
 
+      .social-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
       .footer-contact-info {
         display: flex;
         flex-direction: column;
@@ -683,8 +693,22 @@
 
       .contact-item-icon {
         color: var(--accent);
-        font-size: 1.1rem;
         flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .contact-item-icon svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
 
       .contact-item-text {
@@ -1070,7 +1094,9 @@
             <div class="social-icons">
               <a href="https://facebook.com" class="social-icon" title="Facebook">f</a>
               <a href="https://linkedin.com" class="social-icon" title="LinkedIn">in</a>
-              <a href="mailto:info@dograceecurity.hu" class="social-icon" title="Email">✉</a>
+              <a href="mailto:info@dograceecurity.hu" class="social-icon" title="Email">
+                <svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3.5 5.5 12 13 20.5 5.5"/></svg>
+              </a>
             </div>
           </div>
 
@@ -1089,25 +1115,33 @@
             <h4>Elérhetőség</h4>
             <div class="footer-contact-info">
               <div class="contact-item">
-                <div class="contact-item-icon">📍</div>
+                <div class="contact-item-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s-7-7.58-7-12a7 7 0 1 1 14 0c0 4.42-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
                 <div class="contact-item-text">
                   <span style="font-weight: 600; color: #ffffff;">2120 Dunakeszi, Pela utca 1.</span>
                 </div>
               </div>
               <div class="contact-item">
-                <div class="contact-item-icon">📞</div>
+                <div class="contact-item-icon">
+                  <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+                </div>
                 <div class="contact-item-text">
                   <a href="tel:+36701234567" style="color: var(--accent-light); font-weight: 600;">06 70 123 4567</a>
                 </div>
               </div>
               <div class="contact-item">
-                <div class="contact-item-icon">✉</div>
+                <div class="contact-item-icon">
+                  <svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3.5 5.5 12 13 20.5 5.5"/></svg>
+                </div>
                 <div class="contact-item-text">
                   <a href="mailto:info@dograceecurity.hu" style="color: var(--accent-light); font-weight: 600;">info@dograceecurity.hu</a>
                 </div>
               </div>
               <div class="contact-item">
-                <div class="contact-item-icon">🕒</div>
+                <div class="contact-item-icon">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                </div>
                 <div class="contact-item-text">
                   <span style="color: #ffffff; font-weight: 600;">0–24 órás diszpécserszolgálat</span>
                 </div>
