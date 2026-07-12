@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DOG RACE SECURITY Kft. – megbízható személy- és vagyonvédelem országos lefedettséggel."
+    />
+    <title>DOG RACE SECURITY Kft.</title>
+    <style>
+      :root {
+        --navy: #0a0e1a;
+        --blue-dark: #0f1419;
+        --blue: #1e2f47;
+        --accent: #3b7ae8;
+        --accent-light: #5b8fff;
+        --text-light: #ffffff;
+        --text-muted: #a0aac0;
+        --border: rgba(255, 255, 255, 0.08);
+        --surface: #0f1419;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+        color: var(--text-light);
+        background: #0a0e1a;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #0a0e1a;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0;
+      }
+
+      .topbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        text-transform: uppercase;
+      }
+
+      .brand img.logo-img {
+        height: 46px;
+        width: auto;
+      }
+
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--text-muted);
+        font-weight: 600;
+        font-size: 0.92rem;
+        text-transform: uppercase;
+      }
+
+      .nav a:hover {
+        color: var(--accent-light);
+      }
+
+      .contact-cta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent);
+        color: white;
+        padding: 0.75rem 1.2rem;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(10, 14, 26, 0.85), rgba(10, 14, 26, 0.4)),
+          url("images/image7.jpeg") right center/cover;
+        color: white;
+        padding: 4rem 0 3rem;
+        background-attachment: fixed;
+      }
+
+      .hero .container {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 3.2vw, 3.2rem);
+        line-height: 1.15;
+        margin: 0 0 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.7;
+      }
+
+      .hero .eyebrow {
+        display: inline-block;
+        padding: 0.4rem 0.75rem;
+        border-radius: 4px;
+        background: var(--blue);
+        color: var(--accent-light);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: none;
+        border-radius: 6px;
+        padding: 0.9rem 1.3rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #ffffff;
+        box-shadow: 0 12px 24px rgba(59, 122, 232, 0.32);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+      }
+
+      .hero-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      .hero-card h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #ffffff;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .hero-card ul {
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+
+      .hero-card li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      .hero-card li::before {
+        content: "▪";
+        color: var(--accent);
+      }
+
+      .section {
+        padding: 4rem 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .section-title {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: 1.75rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        font-weight: 800;
+      }
+
+      .muted {
+        color: var(--text-muted);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .card {
+        background: var(--blue);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .about-card {
+        padding: 1.8rem;
+      }
+
+      .about-card h2 {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 1.5rem;
+        margin-top: 0;
+      }
+
+      .about-card p {
+        margin-bottom: 1rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      .about-card img {
+        width: 100%;
+        border-radius: 8px;
+        height: 340px;
+        object-fit: cover;
+      }
+
+      .bullet-list {
+        padding: 0;
+        margin: 1.5rem 0 0;
+        list-style: none;
+      }
+
+      .bullet-list li {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 0.8rem;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .bullet-list li::before {
+        content: "▪";
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.2rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(30, 47, 71, 0.6), rgba(15, 20, 31, 0.8));
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .service-card h3 {
+        margin-top: 0.8rem;
+        margin-bottom: 0.5rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.95rem;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        margin-bottom: 0;
+        font-size: 0.93rem;
+        line-height: 1.5;
+      }
+
+      .service-number {
+        display: inline-grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 6px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        font-size: 1.2rem;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery figure {
+        margin: 0;
+        background: var(--blue);
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .gallery img {
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .gallery figcaption {
+        padding: 0.85rem 1rem 1rem;
+        color: var(--text-muted);
+        font-size: 0.93rem;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .contact-info {
+        padding: 2rem;
+        background: linear-gradient(135deg, var(--navy) 0%, rgba(10, 14, 26, 0.5) 100%);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .contact-map {
+        padding: 0;
+        background: transparent;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .contact-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        min-height: 400px;
+      }
+
+      .contact-info h2 {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 1.5rem;
+        margin-top: 0;
+      }
+
+      .contact-info p {
+        margin: 0.6rem 0 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .contact-form {
+        padding: 2rem;
+        background: var(--blue);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        max-width: 600px;
+      }
+
+      .contact-form h3 {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 1.2rem;
+        margin-top: 0;
+      }
+
+      .contact-form form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.95rem 1rem;
+        border: 1px solid rgba(59, 122, 232, 0.3);
+        border-radius: 6px;
+        font: inherit;
+        background: rgba(10, 14, 26, 0.6);
+        color: #ffffff;
+      }
+
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: var(--text-muted);
+      }
+
+      .contact-form textarea {
+        min-height: 125px;
+        resize: vertical;
+      }
+
+      footer {
+        background: var(--navy);
+        color: var(--text-muted);
+        padding: 3rem 0 0;
+        font-size: 0.93rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .footer-col h4 {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.85rem;
+        color: var(--accent-light);
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .footer-col p {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+        font-size: 0.9rem;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 0.6rem;
+      }
+
+      .footer-col ul li a {
+        color: var(--text-muted);
+        transition: color 0.2s ease;
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--accent-light);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .social-icon:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      .footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .contact-item-icon {
+        color: var(--accent);
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .contact-item-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .footer-cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .footer-cta h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-cta p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-cta .btn {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 0;
+        font-size: 0.85rem;
+      }
+
+      .footer-bottom a {
+        color: var(--text-muted);
+        transition: color 0.2s ease;
+      }
+
+      .footer-bottom a:hover {
+        color: var(--accent-light);
+      }
+
+      @media (max-width: 900px) {
+        .footer-content {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 600px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero .container,
+        .split,
+        .contact-wrap,
+        .services-grid,
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 3.5rem;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .nav {
+          display: none;
+        }
+
+        .section-title {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .brand img.logo-img {
+          height: 38px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="#top">
+          <img class="logo-img" src="images/dograce_logo.png" alt="DOG RACE SECURITY Kft. logó" />
+        </a>
+        <nav class="nav" aria-label="Fő navigáció">
+          <a href="#services">Szolgáltatások</a>
+          <a href="#about">Rólunk</a>
+          <a href="#references">Referenciák</a>
+          <a href="#contact">Kapcsolat</a>
+        </nav>
+        <a class="contact-cta" href="tel:+36701234567">06 70 123 4567</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <div>
+            <div class="eyebrow">Professzionális biztonság</div>
+            <h1>Biztonság. Megbízhatóság. Professzionalizmus.</h1>
+            <p>
+              Teljes körű vagyonvédelem és Ön nyugalmaért és biztonságáért.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Szolgáltatásaink</a>
+              <a class="btn btn-secondary" href="#about">Ajánlatot kérek</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h3>Miért válasszon minket?</h3>
+            <ul>
+              <li>Tapasztalt és képzett munkatársak</li>
+              <li>Folyamatos rendelkezésre állás</li>
+              <li>Gyors reagálás</li>
+              <li>Egyedi biztonsági megoldások</li>
+              <li>Megbízható partneri együttműködés</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container split">
+          <div class="card about-card">
+            <h2>Rólunk</h2>
+            <p>
+              A DOG RACE SECURITY Kft. elkötelezett a magas színvonalú személy- és vagyonvédelmi
+              szolgáltatások nyújtása mellett. Munkánk során a megbízhatóságot, a diszkréciót és a
+              professzionális fellépést tekintjük elsődleges értékeinknek.
+            </p>
+            <p>
+              Minden megbízás esetén ügyfeleink igényeihez igazított biztonsági megoldásokat dolgozunk
+              ki, legyen szó objektumőrzésről, rendezvénybiztosításról vagy személyvédelemről.
+            </p>
+            <ul class="bullet-list">
+              <li>Országos lefedettség</li>
+              <li>24 órás rendelkezésre állás</li>
+              <li>Professzionális, egyedi megoldások</li>
+            </ul>
+          </div>
+          <div class="card about-card">
+            <img src="images/image2.jpeg" alt="Biztonsági szolgáltatás munkavégzés közben" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-title">
+            <h2>Szolgáltatásaink</h2>
+            <span class="muted">Biztonságos, megbízható és rugalmas megoldások</span>
+          </div>
+          <div class="services-grid">
+            <article class="card service-card">
+              <div class="service-number">01</div>
+              <h3>Objektumőrzés</h3>
+              <p>Irodaházak, telephelyek, üzemek és raktárak folyamatos őrzése.</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-number">02</div>
+              <h3>Portaszolgálat</h3>
+              <p>Beléptetés, vendégkezelés és recepciós feladatok ellátása.</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-number">03</div>
+              <h3>Járőrszolgálat</h3>
+              <p>Rendszeres vagy eseti ellenőrzések a biztonság fenntartása érdekében.</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-number">04</div>
+              <h3>Rendezvénybiztosítás</h3>
+              <p>Kulturális, sport- és vállalati rendezvények teljes körű biztosítása.</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-number">05</div>
+              <h3>Személyvédelem</h3>
+              <p>Diszkrét és professzionális személyvédelmi szolgáltatások.</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-number">06</div>
+              <h3>Kutyás őrzés</h3>
+              <p>Nagy területű objektumok és telephelyek fokozott védelme szolgálati kutyákkal.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="references">
+        <div class="container">
+          <div class="section-title">
+            <h2>Referenciák</h2>
+            <span class="muted">Logók, partnercégek, fotók és esettanulmányok később kerülnek feltöltésre</span>
+          </div>
+          <div class="gallery">
+            <figure>
+              <img src="images/image3.jpeg" alt="Biztonsági szolgáltatás fotó" />
+              <figcaption>Biztonságos működés, precíz koordináció</figcaption>
+            </figure>
+            <figure>
+              <img src="images/image4.jpeg" alt="Kutyás őrzés fotó" />
+              <figcaption>Fokozott védelem szolgálati kutyákkal</figcaption>
+            </figure>
+            <figure>
+              <img src="images/image5.jpeg" alt="Rendezvénybiztosítás fotó" />
+              <figcaption>Rendezvények teljes körű biztosítása</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact-wrap">
+          <div class="card contact-info">
+            <h2>Hol találhat minket?</h2>
+            <p>2120 Dunakeszi, Pela utca 1.</p>
+            <p style="margin-top: 1.5rem; font-weight: 700; color: var(--accent-light);">Telefonszám</p>
+            <p>06 70 123 4567</p>
+            <p style="margin-top: 1.5rem; font-weight: 700; color: var(--accent-light);">E-mail</p>
+            <p>info@dograceecurity.hu</p>
+            <p style="margin-top: 1.5rem; font-weight: 700; color: var(--accent-light);">Rendelkezésre állás</p>
+            <p>0–24 órás diszpécserszolgálat</p>
+          </div>
+          <div class="card contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2705.676487563281!2d19.40287!3d47.629444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c7d8b5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sDog%20Race%20Security%20Kft.!5e0!3m2!1shu!2shu!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="container" style="margin-top: 2rem;">
+          <div class="card contact-form">
+            <h3>Ajánlatkérő űrlap</h3>
+            <form>
+              <input type="text" placeholder="Név" aria-label="Név" />
+              <input type="text" placeholder="Cégnév" aria-label="Cégnév" />
+              <input type="tel" placeholder="Telefonszám" aria-label="Telefonszám" />
+              <input type="email" placeholder="E-mail" aria-label="E-mail" />
+              <textarea placeholder="Üzenet" aria-label="Üzenet"></textarea>
+              <button class="btn btn-primary" type="submit">Ajánlatot kérek</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h4>Rólunk</h4>
+            <p>A Dog Race Security Kft. több éves tapasztalattal nyújt megbízható és professzionális biztonsági szolgáltatásokat ügyfeleink számára.</p>
+            <div class="social-icons">
+              <a href="https://facebook.com" class="social-icon" title="Facebook">f</a>
+              <a href="https://linkedin.com" class="social-icon" title="LinkedIn">in</a>
+              <a href="mailto:info@dograceecurity.hu" class="social-icon" title="Email">✉</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Gyors linkek</h4>
+            <ul>
+              <li><a href="#top">Főoldal</a></li>
+              <li><a href="#services">Szolgáltatásaink</a></li>
+              <li><a href="#about">Rólunk</a></li>
+              <li><a href="#references">Referenciák</a></li>
+              <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Elérhetőség</h4>
+            <div class="footer-contact-info">
+              <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <div class="contact-item-text">
+                  <span style="font-weight: 600; color: #ffffff;">2120 Dunakeszi, Pela utca 1.</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">📞</div>
+                <div class="contact-item-text">
+                  <a href="tel:+36701234567" style="color: var(--accent-light); font-weight: 600;">06 70 123 4567</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">✉</div>
+                <div class="contact-item-text">
+                  <a href="mailto:info@dograceecurity.hu" style="color: var(--accent-light); font-weight: 600;">info@dograceecurity.hu</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">🕒</div>
+                <div class="contact-item-text">
+                  <span style="color: #ffffff; font-weight: 600;">0–24 órás diszpécserszolgálat</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col footer-cta">
+            <h4>Kérdése van?</h4>
+            <p>Írjon nekünk vagy hívjon bennünket bizalommal!</p>
+            <a href="tel:+36701234567" class="btn btn-primary">06 70 123 4567</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 Dog Race Security Kft. Minden jog fenntartva.</p>
+          <div>
+            <a href="#">Adatkezelési tájékoztató</a> | <a href="#">Általános szerződési feltételek</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

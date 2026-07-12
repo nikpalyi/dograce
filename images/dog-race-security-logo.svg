@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title desc">
+  <title id="title">DOG RACE SECURITY</title>
+  <desc id="desc">Nemet juhaszkutya fejet abrazolo Dog Race Security logo, fekete-feher grafikus stilusban.</desc>
+
+  <g transform="translate(8,-2) scale(0.46)">
+    <!-- main head silhouette -->
+    <polygon points="
+      150,285
+      183,272
+      168,257
+      203,252
+      193,226
+      222,206
+      218,150
+      233,113
+      207,36
+      186,98
+      161,16
+      150,88
+      138,95
+      120,103
+      98,113
+      72,124
+      36,140
+      6,153
+      30,146
+      16,168
+      52,163
+      82,175
+      108,196
+      118,222
+      133,255
+    " fill="#f4f6f9" stroke="#0a0e1a" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- ear fur stripes: back ear -->
+    <g fill="#000000">
+      <polygon points="207,36 216,74 202,68"/>
+      <polygon points="213,88 222,108 203,98"/>
+    </g>
+    <!-- ear fur stripes: front ear -->
+    <g fill="#000000">
+      <polygon points="161,16 157,54 147,44"/>
+      <polygon points="152,64 149,84 142,72"/>
+    </g>
+
+    <!-- forehead blaze (light stripe) -->
+    <polygon points="150,88 138,95 128,118 143,112 152,96" fill="#ffffff"/>
+    <polygon points="120,103 98,113 92,132 112,124" fill="#ffffff"/>
+
+    <!-- eye mask patch -->
+    <polygon points="146,110 132,101 114,108 104,122 112,132 130,131 142,124" fill="#000000"/>
+    <!-- eye -->
+    <circle cx="122" cy="119" r="7" fill="#f4f6f9"/>
+    <circle cx="123" cy="119" r="3" fill="#000000"/>
+
+    <!-- muzzle top shade -->
+    <polygon points="112,124 92,132 72,124 36,140 6,153 30,146 65,120" fill="#d6dae0"/>
+
+    <!-- nose -->
+    <path d="M10,151 L36,141 33,161 16,167 Z" fill="#000000"/>
+
+    <!-- mouth line -->
+    <path d="M18,165 Q48,175 84,178" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- chest / neck fur texture -->
+    <g fill="#000000">
+      <polygon points="52,163 82,175 78,188 58,180"/>
+      <polygon points="108,196 118,222 100,214 98,200"/>
+      <polygon points="133,255 150,285 128,275 122,258"/>
+    </g>
+  </g>
+
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-weight="900" letter-spacing="6">
+    <text x="185" y="67" font-size="42">DOG RACE</text>
+    <text x="185" y="112" font-size="30" fill="#5b8fff" letter-spacing="10">SECURITY</text>
+  </g>
+</svg>
