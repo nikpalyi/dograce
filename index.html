@@ -354,6 +354,57 @@
         font-size: 1.2rem;
       }
 
+      .service-icon {
+        display: inline-grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+      }
+
+      .service-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.2rem;
+        margin-top: 2.5rem;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.2rem;
+        background: var(--blue);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .stat-item img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .stat-number {
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 1.6rem;
+        line-height: 1.1;
+      }
+
+      .stat-label {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
       .gallery {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -624,6 +675,10 @@
           grid-template-columns: 1fr;
         }
 
+        .stats-bar {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .hero {
           padding-top: 3.5rem;
         }
@@ -721,35 +776,66 @@
           </div>
           <div class="services-grid">
             <article class="card service-card">
-              <div class="service-number">01</div>
+              <div class="service-icon"><img src="images/icons/icon-objektumorzes.png" alt="Objektumőrzés ikon" /></div>
               <h3>Objektumőrzés</h3>
-              <p>Irodaházak, telephelyek, üzemek és raktárak folyamatos őrzése.</p>
+              <p>Épületek, telephelyek, ipari létesítmények őrzése és védelme éjjel-nappal.</p>
             </article>
             <article class="card service-card">
-              <div class="service-number">02</div>
+              <div class="service-icon"><img src="images/icons/icon-portaszolgalat.png" alt="Portaszolgálat ikon" /></div>
               <h3>Portaszolgálat</h3>
-              <p>Beléptetés, vendégkezelés és recepciós feladatok ellátása.</p>
+              <p>Recepciós és portaszolgálati feladatok ellátása, beléptetés és információs szolgáltatások.</p>
             </article>
             <article class="card service-card">
-              <div class="service-number">03</div>
+              <div class="service-icon"><img src="images/icons/icon-jarorszolgalat.png" alt="Járőrszolgálat ikon" /></div>
               <h3>Járőrszolgálat</h3>
-              <p>Rendszeres vagy eseti ellenőrzések a biztonság fenntartása érdekében.</p>
+              <p>Rendszeres vagy alkalmi járőrszolgálat gépkocsival vagy gyalogosan.</p>
             </article>
             <article class="card service-card">
-              <div class="service-number">04</div>
+              <div class="service-icon"><img src="images/icons/icon-rendezvenybiztositas.png" alt="Rendezvénybiztosítás ikon" /></div>
               <h3>Rendezvénybiztosítás</h3>
-              <p>Kulturális, sport- és vállalati rendezvények teljes körű biztosítása.</p>
+              <p>Rendezvények biztosítása a résztvevők és a vagyon védelme érdekében.</p>
             </article>
             <article class="card service-card">
-              <div class="service-number">05</div>
-              <h3>Személyvédelem</h3>
-              <p>Diszkrét és professzionális személyvédelmi szolgáltatások.</p>
+              <div class="service-icon"><img src="images/icons/icon-takaritas.png" alt="Takarítás ikon" /></div>
+              <h3>Takarítás</h3>
+              <p>Irodaházak, létesítmények és közterületek takarítása magas színvonalon.</p>
             </article>
             <article class="card service-card">
-              <div class="service-number">06</div>
-              <h3>Kutyás őrzés</h3>
-              <p>Nagy területű objektumok és telephelyek fokozott védelme szolgálati kutyákkal.</p>
+              <div class="service-icon"><img src="images/icons/icon-megbizhato-partner.png" alt="Megbízható partner ikon" /></div>
+              <h3>Megbízható partner</h3>
+              <p>Ügyfeleink biztonsága a legfontosabb számunkra. Hosszú távú, megbízható együttműködés.</p>
             </article>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stat-item">
+              <img src="images/icons/icon-stat-tapasztalat.png" alt="Év tapasztalat ikon" />
+              <div>
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Év tapasztalat</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <img src="images/icons/icon-stat-szakember.png" alt="Szakember ikon" />
+              <div>
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Szakember</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <img src="images/icons/icon-stat-ugyfel.png" alt="Elégedett ügyfél ikon" />
+              <div>
+                <div class="stat-number">250+</div>
+                <div class="stat-label">Elégedett ügyfél</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <img src="images/icons/icon-stat-szolgalat.png" alt="Órás szolgálat ikon" />
+              <div>
+                <div class="stat-number">0-24</div>
+                <div class="stat-label">Órás szolgálat</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
