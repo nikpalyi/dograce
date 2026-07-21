@@ -871,6 +871,24 @@
         color: var(--accent-light);
       }
 
+      .footer-credits {
+        padding: 0.85rem 0 1.25rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-align: center;
+      }
+
+      .footer-credits a {
+        color: var(--text-muted);
+        text-decoration: underline;
+        transition: color 0.2s ease;
+      }
+
+      .footer-credits a:hover {
+        color: var(--accent-light);
+      }
+
       @media (max-width: 600px) {
         .footer-top {
           flex-direction: column;
@@ -1321,15 +1339,6 @@
               </div>
               <span class="detail-value"><a href="mailto:dograceseckft@gmail.com">dograceseckft@gmail.com</a></span>
             </div>
-            <div class="detail-row">
-              <div class="detail-heading">
-                <span class="detail-icon">
-                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-                </span>
-                <span class="detail-label">Rendelkezésre állás</span>
-              </div>
-              <span class="detail-value">0–24 órás diszpécserszolgálat</span>
-            </div>
           </div>
 
           <div class="card contact-map-card reveal">
@@ -1385,6 +1394,15 @@
         <div>
           <a href="#">Adatkezelési tájékoztató</a> | <a href="#">Általános szerződési feltételek</a>
         </div>
+      </div>
+
+      <div class="container footer-credits">
+        <p>
+          Photo by
+          <a href="https://unsplash.com/@rgaleriacom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Ricardo Gomez Angel</a>
+          on
+          <a href="https://unsplash.com/photos/gray-digital-wallpaper-9AdeEdYB2yk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+        </p>
       </div>
     </footer>
 
