@@ -656,11 +656,25 @@
         display: block;
       }
 
+      .contact-map-card {
+        padding: 0;
+        overflow: hidden;
+        min-height: 340px;
+      }
+
+      .contact-map-card iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 340px;
+        border: none;
+        display: block;
+      }
+
       .contact-grid {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 3rem;
-        align-items: start;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: stretch;
       }
 
       .contact-grid--no-form {
@@ -680,6 +694,10 @@
       .contact-grid--no-form .contact-details-intro {
         margin-left: auto;
         margin-right: auto;
+      }
+
+      .contact-details {
+        padding: 1.75rem;
       }
 
       .contact-details h2 {
@@ -966,7 +984,7 @@
           padding: 2.75rem 0;
         }
 
-        .contact-map iframe {
+        .contact-map-card iframe {
           min-height: 280px;
         }
 
@@ -1269,14 +1287,8 @@
       </section>
 
       <section class="section" id="contact">
-        <div class="container">
-          <div class="card contact-map-full reveal">
-            <iframe src="https://www.google.com/maps?q=2120+Dunakeszi,+F%C5%91+%C3%BAt+69&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
-        <div class="container contact-grid" style="margin-top: 2rem;">
-          <div class="contact-details reveal">
+        <div class="container contact-grid">
+          <div class="card contact-details reveal">
             <h2>Elérhetőség</h2>
             <p class="contact-details-intro">
               Ha bármilyen kérdése van, vagy egyedi igénye lenne biztonsági szolgáltatásainkkal
@@ -1309,8 +1321,22 @@
               </div>
               <span class="detail-value"><a href="mailto:dograceseckft@gmail.com">dograceseckft@gmail.com</a></span>
             </div>
+            <div class="detail-row">
+              <div class="detail-heading">
+                <span class="detail-icon">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                </span>
+                <span class="detail-label">Rendelkezésre állás</span>
+              </div>
+              <span class="detail-value">0–24 órás diszpécserszolgálat</span>
+            </div>
           </div>
 
+          <div class="card contact-map-card reveal">
+            <iframe src="https://www.google.com/maps?q=2120+Dunakeszi,+F%C5%91+%C3%BAt+69&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <!--
           <div class="card contact-form reveal" id="ajanlatkeres">
             <form id="quote-form">
               <input type="text" name="nev" placeholder="Név" aria-label="Név" required />
@@ -1336,6 +1362,7 @@
               <button class="btn btn-primary" type="submit">Küldés</button>
             </form>
           </div>
+          -->
         </div>
       </section>
     </main>
