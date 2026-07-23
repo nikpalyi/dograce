@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="DOG RACE SECURITY Kft. – megbízható személy- és vagyonvédelem országos lefedettséggel."
+      content="DOG RACE SECURITY Kft. – megbízható vagyonvédelem és biztonsági szolgálat országos lefedettséggel: objektumőrzés, portaszolgálat, járőrszolgálat, rendezvénybiztosítás."
     />
+    <meta
+      name="keywords"
+      content="biztonsági szolgálat, vagyonvédelem, személyvédelem, őrző-védő szolgálat, dog race security, dograce, objektumőrzés, portaszolgálat, járőrszolgálat, rendezvénybiztosítás, takarítás, Dunakeszi"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DOG RACE SECURITY Kft." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DOG RACE SECURITY Kft." />
+    <meta property="og:title" content="DOG RACE SECURITY Kft. – Biztonsági szolgálat és vagyonvédelem" />
+    <meta
+      property="og:description"
+      content="Megbízható személy- és vagyonvédelem országos lefedettséggel: objektumőrzés, portaszolgálat, járőrszolgálat, rendezvénybiztosítás, takarítás."
+    />
+    <meta property="og:locale" content="hu_HU" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="DOG RACE SECURITY Kft." />
+    <meta
+      name="twitter:description"
+      content="Megbízható személy- és vagyonvédelem országos lefedettséggel."
+    />
+
     <title>DOG RACE SECURITY Kft.</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
@@ -106,6 +129,10 @@
       .utility-phone:hover {
         background: var(--accent-light);
         color: #ffffff;
+      }
+
+      .utility-phone-cta {
+        display: none;
       }
 
       .topbar {
@@ -892,7 +919,12 @@
       @media (max-width: 600px) {
         .footer-top {
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-nav {
+          justify-content: center;
         }
 
         .footer-bottom {
@@ -936,8 +968,8 @@
         .hero {
           padding-top: 3.5rem;
           background-attachment: scroll;
-          background-position: center top;
-          background-size: contain;
+          background-position: 58% center;
+          background-size: cover;
           background-repeat: no-repeat;
           background-color: var(--navy);
         }
@@ -951,10 +983,19 @@
 
       @media (max-width: 700px) {
         .utility-bar .container {
-          flex-wrap: wrap;
           justify-content: center;
-          gap: 0.35rem 1.25rem;
-          text-align: center;
+        }
+
+        .utility-info {
+          display: none;
+        }
+
+        .utility-phone-cta {
+          display: inline;
+        }
+
+        .service-photo-wrap::after {
+          background: linear-gradient(180deg, rgba(10, 20, 40, 0.32), rgba(10, 20, 40, 0.48));
         }
 
         .topbar .container {
@@ -1093,6 +1134,32 @@
         }
       </style>
     </noscript>
+
+    <!-- Ha megvan a végleges domain, itt add hozzá: <link rel="canonical">, og:url, og:image, twitter:image -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "DOG RACE SECURITY Kft.",
+        "description": "Megbízható személy- és vagyonvédelem országos lefedettséggel: objektumőrzés, portaszolgálat, járőrszolgálat, rendezvénybiztosítás, takarítás.",
+        "telephone": "+36706069802",
+        "email": "dograceseckft@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Fő út 69.",
+          "addressLocality": "Dunakeszi",
+          "postalCode": "2120",
+          "addressCountry": "HU"
+        },
+        "areaServed": "HU",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="utility-bar">
@@ -1101,7 +1168,7 @@
           <span>2120 Dunakeszi, Fő út 69.</span>
           <a href="mailto:dograceseckft@gmail.com">dograceseckft@gmail.com</a>
         </div>
-        <a class="utility-phone" href="tel:+36706069802">06 70 606 9802</a>
+        <a class="utility-phone" href="tel:+36706069802"><span class="utility-phone-cta">Hívjon:</span> 06 70 606 9802</a>
       </div>
     </div>
     <header class="topbar">
