@@ -668,6 +668,36 @@
         color: var(--accent-light);
       }
 
+      .reference-logos {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .reference-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        padding: 1.25rem;
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .reference-logo:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .reference-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
       .contact-map-full {
         padding: 0;
         background: transparent;
@@ -961,7 +991,8 @@
         }
 
         .stats-bar,
-        .partner-logos {
+        .partner-logos,
+        .reference-logos {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -1073,6 +1104,10 @@
         .stats-bar,
         .partner-logos {
           grid-template-columns: 1fr;
+        }
+
+        .reference-logos {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
@@ -1234,7 +1269,7 @@
               <div class="service-body">
                 <div class="service-icon"><img src="images/icons/icon-objektumorzes.png" alt="Objektumőrzés ikon" /></div>
                 <h3>Objektumőrzés</h3>
-                <p>Épületek, telephelyek, ipari létesítmények őrzése és védelme éjjel-nappal.</p>
+                <p>Épületek, telephelyek, irodaházak és ipari létesítmények komplett objektumvédelme, igény esetén kutyás őrszolgálattal.</p>
               </div>
             </article>
             <article class="card service-card reveal">
@@ -1242,7 +1277,7 @@
               <div class="service-body">
                 <div class="service-icon"><img src="images/icons/icon-portaszolgalat.png" alt="Portaszolgálat ikon" /></div>
                 <h3>Portaszolgálat</h3>
-                <p>Recepciós és portaszolgálati feladatok ellátása, beléptetés és információs szolgáltatások.</p>
+                <p>Recepciós, diszpécseri és operátori feladatok ellátása, beléptetés és információs szolgáltatások.</p>
               </div>
             </article>
             <article class="card service-card reveal">
@@ -1250,7 +1285,7 @@
               <div class="service-body">
                 <div class="service-icon"><img src="images/icons/icon-jarorszolgalat.png" alt="Járőrszolgálat ikon" /></div>
                 <h3>Járőrszolgálat</h3>
-                <p>Rendszeres vagy alkalmi járőrszolgálat gépkocsival vagy gyalogosan.</p>
+                <p>Nappali és éjszakai területellenőrző járőrszolgálat felállítása és üzemeltetése, gépkocsival vagy gyalogosan.</p>
               </div>
             </article>
             <article class="card service-card reveal">
@@ -1258,7 +1293,7 @@
               <div class="service-body">
                 <div class="service-icon"><img src="images/icons/icon-rendezvenybiztositas.png" alt="Rendezvénybiztosítás ikon" /></div>
                 <h3>Rendezvénybiztosítás</h3>
-                <p>Rendezvények biztosítása a résztvevők és a vagyon védelme érdekében.</p>
+                <p>Rendezvények biztosítása és személyvédelem a résztvevők és a vagyon védelme érdekében.</p>
               </div>
             </article>
             <article class="card service-card reveal">
@@ -1266,7 +1301,7 @@
               <div class="service-body">
                 <div class="service-icon"><img src="images/icons/icon-takaritas.png" alt="Takarítás ikon" /></div>
                 <h3>Takarítás</h3>
-                <p>Irodaházak, létesítmények és közterületek takarítása magas színvonalon.</p>
+                <p>Irodaházak, üzemek és közterületek takarítása gépi padló- és szőnyegtisztítással, valamint fertőtlenítő gőztakarítással.</p>
               </div>
             </article>
             <article class="card service-card reveal">
@@ -1325,8 +1360,9 @@
             </p>
             <p>
               Fő tevékenységi köreink közé tartozik létesítmények és irodaházak őrzése, építési
-              területek őrzésvédelme, vagyonvédelmi és tűzvédelmi rendszerek telepítése és igény
-              szerinti karbantartása, valamint rendezvények biztosítása.
+              területek őrzésvédelme, vagyonvédelmi és tűzvédelmi rendszerek – beléptető- és
+              kamerarendszerek – telepítése és igény szerinti karbantartása, valamint rendezvények
+              biztosítása.
             </p>
             <p>
               A 100%-ban magyar tulajdonú cégünk stabil tőkeháttérrel és többéves szakmai
@@ -1340,6 +1376,12 @@
               <li>Szigorú alkalmassági követelmény: feddhetetlenségi vizsgálat</li>
               <li>Kétévente kötelező orvosi és pszichológiai vizsgálat munkatársainknál</li>
             </ul>
+            <p>
+              Célunk, hogy Ügyfeleinket ne csak a szerződéskötés pillanatáig kezeljük kitüntetett
+              figyelemmel, hanem a szolgáltatás teljes időtartama alatt készen álljunk minden
+              felmerülő igény azonnali kiszolgálására – erről eddigi megrendelőink is
+              tanúskodhatnak.
+            </p>
           </div>
         </div>
       </section>
@@ -1350,23 +1392,22 @@
             <h2>Referenciák</h2>
             <span class="muted">Partnercégeink megbíznak bennünk</span>
           </div>
-          <div class="partner-logos stagger">
-            <div class="partner-logo reveal">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L22 20 L2 20 Z" /></svg>
-              Alpha Group
-            </div>
-            <div class="partner-logo reveal">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 7.07 17.07L12 12Z" /></svg>
-              City Center
-            </div>
-            <div class="partner-logo reveal">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 21 7v10l-9 5-9-5V7Z" /></svg>
-              Build Tech
-            </div>
-            <div class="partner-logo reveal">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4C10 4 4 10 4 20c10 0 16-6 16-16Z" /></svg>
-              Green Service
-            </div>
+          <div class="reference-logos stagger">
+            <div class="reference-logo reveal"><img src="images/ref_logos/atev.png" alt="ATEV Zrt." loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/strabag.png" alt="STRABAG" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/proform.png" alt="Proform Ingatlanbefektetési Zrt." loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/titan-94.png" alt="Titán 94 Kft." loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/toperini-ipari-park.png" alt="Toperini Ipari Park" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/paller-csarnok.png" alt="Pallér Csarnok" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/legio-2000-security.png" alt="Légió 2000 Security" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/hdr-hard-dog-race.png" alt="HDR Hard Dog Race" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/dogatlon.png" alt="Dogatlon" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/dpd.png" alt="DPD" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/trt-europe.png" alt="TRT Europe" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/republic-group.png" alt="Republic Group" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/lbt-kft.png" alt="LBT Kft." loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/dr-lenkei-vitamin.png" alt="dr. Lenkei Vitamin" loading="lazy" /></div>
+            <div class="reference-logo reveal"><img src="images/ref_logos/yellow-premium-bananas.png" alt="Yellow Premium Bananas" loading="lazy" /></div>
           </div>
         </div>
       </section>
